@@ -82,7 +82,7 @@ app.get("/health", (req, res) => {
 });
 
 // Send the frontend for any non-API route
-app.get("*", (req, res) => {
+app.get("/{*splat}", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
