@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quick Note - a simple full-stack note-taking application">
+  <title>Quick Note Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">Q</div>
+      <div>
+        <h1>Quick Note</h1>
+        <p>Simple. Fast. Organized.</p>
+      </div>
+    </div>
+    <div class="status"><span class="dot"></span> Full-Stack App</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">MY NOTES</p>
+        <h2>Capture your ideas.</h2>
+        <p class="subtitle">Create, read and delete notes using a REST API and asynchronous JavaScript.</p>
+      </div>
+      <div class="note-count"><strong id="noteCount">0</strong><span>Notes</span></div>
+    </section>
+
+    <section class="grid">
+      <div class="panel form-panel">
+        <h3>Create a Note</h3>
+        <p class="muted">Add a title and your note content below.</p>
+
+        <form id="noteForm">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" maxlength="80" placeholder="e.g. Project ideas" required>
+
+          <label for="content">Content</label>
+          <textarea id="content" name="content" rows="9" maxlength="1000" placeholder="Write your note here..." required></textarea>
+
+          <button class="primary" type="submit" id="saveBtn">+ Save Note</button>
+          <p id="message" class="message" role="status"></p>
+        </form>
+      </div>
+
+      <div class="panel notes-panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Saved Notes</h3>
+            <p class="muted">Your latest notes appear first.</p>
+          </div>
+          <button class="secondary" id="refreshBtn" type="button">Refresh</button>
+        </div>
+
+        <div id="notesList" class="notes-list">
+          <div class="loading">Loading notes...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Quick Note Application • Node.js + Express + HTML/CSS/JS</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
